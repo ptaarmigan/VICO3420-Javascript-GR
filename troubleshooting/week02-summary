@@ -1,0 +1,5 @@
+Line 22: Missing closing h2 tag
+Line 27: br tag used instead of closing p tag
+Line 50: Extra '<' in front of a tag
+Line 50: Missing quotation mark breaks line
+Line 55: Email Link is missing "mailto:" parameter
