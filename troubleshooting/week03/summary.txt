@@ -1,0 +1,5 @@
+Line 10: Extra colon disrupting formatting
+Line 16: Text align changed to center
+Line 32: Selector targeting "#footer" when no id exists, changed to target footer element.
+Line 63: "id" instead of "class" excludes it from right selector
+Line 75: Added inline style from line 69
