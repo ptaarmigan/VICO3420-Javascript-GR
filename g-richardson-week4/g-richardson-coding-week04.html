@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #bc91d6;
+        font-family: "Cormorant Infant", Georgia, 'Times New Roman', Times, serif;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: auto;
+        padding: auto;
+      }
+
+      .item {
+        background-color: white;
+        width: 20svw;
+        height: 12svw;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let yesterday = "";
+      let today = "";
+      let tomorrow = "";
+      let twoDays = "";
+      let favNumber = 0;
+      let age = 0;
+      let luckyNumber = 0;
+      yesterday = prompt("How was your day yesterday?");
+      today = prompt("How is your day today?");
+      tomorrow = prompt("How do you think your day tomorrow will be?");
+      favNumber = Number(prompt("Tell me your favorite number."));
+      console.log(favNumber);
+      age = Number(prompt("How old are you?"));
+      console.log(age);
+      luckyNumber = age + favNumber + 13;
+      console.log(luckyNumber);
+      twoDays = "The last two days were " + yesterday + " and " + today + ".";
+      console.log("twoDays = " + twoDays);
+    </script>
+
+    <div class="row">
+      <div class="item">
+        <h2>Yesterday:</h2>
+        <div id="past"></div>
+      </div>
+
+      <div class="item">
+        <h2>Today:</h2>
+        <div id="present"></div>
+      </div>
+
+      <div class="item">
+        <h2>Tomorrow:</h2>
+        <div id="future"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="item">
+        <h2>Your Future...</h2>
+        <div id="fortune"></div>
+      </div>
+      <div class="item">
+        <h2>Your lucky number is...</h2>
+        <div id="lucky-number"></div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("past").innerHTML =
+        ` <p>Your day was ${yesterday}.</p>`;
+
+      document.getElementById("present").innerHTML =
+        `<p>Your day has been ${today}.</p>`;
+
+      document.getElementById("future").innerHTML =
+        `<p>Your day will be ${tomorrow}.</p>`;
+
+      if (favNumber > age) {
+        document.getElementById("fortune").innerHTML =
+          `<p>Your future looks ill.</p>`;
+      } else {
+        document.getElementById("fortune").innerHTML =
+          `<p>Your future looks bright!</p>`;
+      }
+
+      document.getElementById("lucky-number").innerHTML =
+        ` <p>${luckyNumber}.</p>`;
+    </script>
+  </body>
+</html>

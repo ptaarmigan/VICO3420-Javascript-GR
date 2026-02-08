@@ -1,0 +1,5 @@
+Line 15: const instead of let
+Line 35: Missing )
+~line 56: verb1 instead of verb 01
+#container is placed after script
+dodonot is not camelCased
