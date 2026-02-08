@@ -13,8 +13,9 @@
     />
     <style>
       body {
-        background-color: #bc91d6;
-        font-family: "Cormorant Infant", Georgia, 'Times New Roman', Times, serif;
+        background-color: #662b8a;
+        font-family:
+          "Cormorant Infant", Georgia, "Times New Roman", Times, serif;
       }
 
       .row {
@@ -32,6 +33,7 @@
         padding: 10px;
         margin: 10px;
         text-align: center;
+        border-radius: 5%;
       }
     </style>
   </head>
@@ -40,7 +42,7 @@
       let yesterday = "";
       let today = "";
       let tomorrow = "";
-      let twoDays = "";
+      let summary = "";
       let favNumber = 0;
       let age = 0;
       let luckyNumber = 0;
@@ -52,9 +54,18 @@
       age = Number(prompt("How old are you?"));
       console.log(age);
       luckyNumber = age + favNumber + 13;
-      console.log(luckyNumber);
-      twoDays = "The last two days were " + yesterday + " and " + today + ".";
-      console.log("twoDays = " + twoDays);
+      console.log("luckyNumber =" + luckyNumber);
+      summary =
+        "You have been " +
+        yesterday +
+        " and " +
+        today +
+        ". You are looking for " +
+        tomorrow +
+        ". Follow the number " +
+        luckyNumber +
+        " and luck will be on your side.";
+      console.log("summary = " + summary);
     </script>
 
     <div class="row">
@@ -83,6 +94,11 @@
         <div id="lucky-number"></div>
       </div>
     </div>
+    <div class="row">
+      <div class="item">
+        <div id="summation"></div>
+      </div>
+    </div>
 
     <script>
       document.getElementById("past").innerHTML =
@@ -104,6 +120,8 @@
 
       document.getElementById("lucky-number").innerHTML =
         ` <p>${luckyNumber}.</p>`;
+
+      document.getElementById("summation").innerHTML = `<p>${summary}</p>`
     </script>
   </body>
 </html>
