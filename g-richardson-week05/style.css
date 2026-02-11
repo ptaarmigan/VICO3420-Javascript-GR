@@ -1,0 +1,78 @@
+body {
+  background-color: #083413;
+  font-family: "Cormorant Infant", Georgia, "Times New Roman", Times, serif;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+  padding: auto;
+}
+
+.compact {
+    margin: 5px;
+    justify-content: space-evenly;
+}
+
+.item {
+  background-color: rgb(237, 235, 235);
+  width: 25svw;
+  height: 40svw;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  padding: auto;
+  text-decoration: none;
+  list-style: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: auto;
+    width: 15svw;
+}
+
+h1 {
+    font-family: 'Cormorant Upright', serif;
+}
+
+h2 {
+    font-family: 'Cormorant Upright', serif;
+}
+
+
+
+.disabled {
+    color: #999;
+    pointer-events: none;
+}
+
+button {
+    width: 10svw;
+    height: 3svw;
+    margin: 10px auto;
+    border: none;
+    background-color: #ed6a32;
+    font-family: 'Cormorant Infant', Georgia, "Times New Roman", Times, serif;
+    font-weight: 500;
+    color: white;
+    font-size: 1.001rem;
+}
+
+button.disabled {
+    color:#a76447;
+    background-color: #f6956b;
+}

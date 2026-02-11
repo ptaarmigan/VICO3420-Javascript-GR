@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Cormorant+Upright:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="row">
+      <div class="item">
+        <div id="topleft">
+          <!-- name content-->
+        </div>
+        <div id="middleleft"></div>
+        <div id="bottomleft"></div>
+        <div id="lastleft"></div>
+      </div>
+      <div class="item">
+        <h1>Tell me what you wish for.</h1>
+        <p>And truth will be revealed to you.</p>
+        <button id="first-button" class="button" onclick="namePrompt()">
+          Tell me your name.
+        </button>
+        <h3>How are you feeling?</h3>
+        <div class="row compact disabled" id="checkboxes">
+          <input
+            type="checkbox"
+            id="sinister"
+            name="feeling"
+            value="sinister"
+            onclick="sinisterChecked()"
+          />
+          <label for="sinister">Sinister</label>
+          <input
+            type="checkbox"
+            id="effervescent"
+            name="feeling"
+            value="effervescent"
+            onclick="effervescentChecked()"
+          />
+          <label for="effervescent">Effervescent</label>
+        </div>
+        <h3>Of these, which do you desire most?</h3>
+        <div class="row compact disabled" id="radio">
+          <input
+            type="radio"
+            id="body"
+            name="desire"
+            value="body"
+            onclick="desireInput()"
+          />
+          <label for="body">A body.</label>
+          <input
+            type="radio"
+            id="heart"
+            name="desire"
+            value="heart"
+            onclick="desireInput()"
+          />
+          <label for="heart">A heart.</label>
+          <input
+            type="radio"
+            id="someone-else"
+            name="desire"
+            value="someone else"
+            onclick="desireInput()"
+          />
+          <label for="someone-else">Someone else.</label>
+          <input
+            type="radio"
+            id="nothing"
+            name="desire"
+            value="nothing"
+            onclick="desireInput()"
+          />
+          <label for="nothing">Nothing.</label>
+        </div>
+        <button class="button disabled" id="wish-button" onclick="wish()">
+          Make a wish.
+        </button>
+        <button class="button" id="reset" onclick="reset()">Reset</button>
+      </div>
+      <div class="item">
+        <div id="topright">
+          <!-- wish content-->
+        </div>
+        <div id="middleright"></div>
+        <div id="bottomright"></div>
+      </div>
+    </div>
+    <script>
+      function namePrompt() {
+        let name = prompt("What is your name?");
+        let nameButton = document.getElementById("first-button");
+        let checkboxes = document.getElementById("checkboxes");
+        document.getElementById("topleft").innerHTML = `<h2>${name}</h2>`;
+        nameButton.classList.add("disabled");
+        checkboxes.classList.remove("disabled");
+      }
+
+      function sinisterChecked() {
+        let sinisterValue = document.getElementById("sinister").checked;
+        let radio = document.getElementById("radio");
+        if (sinisterValue === true) {
+          document.getElementById("middleleft").innerHTML =
+            `<h3>Something passes over you.</h3>
+          <p>A shiver down your spine.<p>`;
+        }
+        radio.classList.remove("disabled");
+      }
+
+      function effervescentChecked() {
+        let effervescentValue = document.getElementById("effervescent").checked;
+        let radio = document.getElementById("radio");
+        if (effervescentValue === true) {
+          document.getElementById("bottomleft").innerHTML =
+            `<h3>And your heart is lightened.</h3>
+            <p>Feeling bubbly!<p>`;
+        } else {
+          document.getElementById("bottomleft").innerHTML =
+            `<h3>Unhappy?</h3>
+            <p>Trouble bubbles.<p>`;
+        }
+        radio.classList.remove("disabled");
+      }
+
+      function desireInput() {
+        let bodyValue = document.getElementById("body").checked;
+        let heartValue = document.getElementById("heart").checked;
+        let someoneElseValue = document.getElementById("someone-else").checked;
+        let wishButton = document.getElementById("wish-button");
+        let checkboxes = document.getElementById("checkboxes");
+
+        if (bodyValue === true) {
+          document.getElementById("lastleft").innerHTML = `<p>Yours?<p>`;
+        } else if (heartValue === true) {
+          document.getElementById("lastleft").innerHTML =
+            `<p>Beats walkin'!<p>`;
+        } else if (someoneElseValue === true) {
+          document.getElementById("lastleft").innerHTML =
+            `<p>Wholy outside yourself.<p>`;
+        } else {
+          document.getElementById("lastleft").innerHTML = `<p>Not much.<p>`;
+        }
+
+        wishButton.classList.remove("disabled");
+        checkboxes.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+          checkbox.disabled = true;
+        });
+      }
+
+      function wish() {
+        let wishButton = document.getElementById("wish-button");
+        let radio = document.getElementById("radio");
+        switch (true) {
+          case document.getElementById("body").checked &&
+            document.getElementById("sinister").checked:
+            document.getElementById("topright").innerHTML =
+              `<p>Your wish is dashed to pieces in the ocean.<p>`;
+            break;
+          case document.getElementById("heart").checked &&
+            document.getElementById("effervescent").checked:
+            document.getElementById("topright").innerHTML =
+              `<p>You're uplifted, levity enters your heart.<p>`;
+            break;
+          case document.getElementById("someone-else").checked &&
+            document.getElementById("sinister").checked:
+            document.getElementById("topright").innerHTML =
+              `<p>Maybe love is coming your way.<p>`;
+            break;
+          default:
+            document.getElementById("topright").innerHTML =
+              `<p>You know what's up.<p>`;
+        }
+        wishButton.classList.add("disabled");
+        radio.classList.add("disabled");
+      }
+
+      function reset() {
+        document.getElementById("topleft").innerHTML = ``;
+        document.getElementById("middleleft").innerHTML = ``;
+        document.getElementById("bottomleft").innerHTML = ``;
+        document.getElementById("lastleft").innerHTML = ``;
+        document.getElementById("topright").innerHTML = ``;
+        document.getElementById("middleright").innerHTML = ``;
+        document.getElementById("bottomright").innerHTML = ``;
+        let nameButton = document.getElementById("first-button");
+        let checkboxes = document.getElementById("checkboxes");
+        let radio = document.getElementById("radio");
+        let wishButton = document.getElementById("wish-button");
+        nameButton.classList.remove("disabled");
+        checkboxes.classList.add("disabled");
+        radio.classList.add("disabled");
+        wishButton.classList.add("disabled");
+        checkboxes
+          .querySelectorAll('input[type="checkbox"]')
+          .forEach((checkbox) => (checkbox.checked = false));
+        radio
+          .querySelectorAll('input[type="radio"]')
+          .forEach((radio) => (radio.checked = false));
+      }
+    </script>
+  </body>
+</html>
