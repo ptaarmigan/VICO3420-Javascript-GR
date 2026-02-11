@@ -1,0 +1,5 @@
+line 21: Missing parentheses
+line 15: '==' should be '='
+line 17: '>' should be '>'
+line 18: '/' instead of '+'
+line 13:  added 'Number()' to prompt, now it converts no imput/spaces to 0, which cannot be determined.
