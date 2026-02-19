@@ -4,21 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col">
+        <h1>Flightless Birds</h1>
+        <ul id="bird-list"></ul>
+      </div>
+      <div class="col">
+        <ul id="images"></ul>
+      </div>
+
+      <div class="col">
+        <h2>Further Reading</h2>
+        <ul id="menu"></ul>
+      </div>
+    </div>
+
     <script>
-      let randomNumber = Math.ceil(Math.random() * 100);
+      let birds = [
+        "Kagu",
+        "Rhea",
+        "Kiwi",
+        "Island Rail",
+        "Cassowary",
+        "Penguin",
+      ];
 
-      let userInput = prompt("Guess the number!");
+      let imageURLs = [
+        "media/island-rail.jpg",
+        "media/kagu.jpg",
+        "media/kiwi.jpg",
+        "media/cassowary.jpg",
+        "media/rhea.jpg",
+        "media/penguin.jpg",
+      ];
 
-      while (userInput != randomNumber) {
-        if (userInput < randomNumber) {
-          userInput = prompt("Too low!");
-        } else {
-          userInput = prompt("Too high!");
-        }
+      let largeURLs = [
+        "media/island-rail-large.jpg",
+        "media/kagu-large.jpg",
+        "media/kiwi-large.jpg",
+        "media/cassowary-large.jpg",
+        "media/rhea-large.jpg",
+        "media/penguin-large.jpg",
+      ];
 
-        alert("YAY!")
+      let links = [
+        ["Greater Rhea", "https://ebird.org/species/grerhe1"],
+        ["Kagu", "https://ebird.org/species/kagu1"],
+        ["Inaccessible Island Rail", "https://ebird.org/species/inirai1"],
+        ["Okarito Brown Kiwi", "https://ebird.org/species/okbkiw1"],
+        ["Dwarf Cassowary", "https://ebird.org/species/dwacas1"],
+        ["Adelie Penguin", "https://ebird.org/species/adepen1"],
+      ];
+
+      largeURLs.sort();
+
+      imageURLs.sort();
+
+      links.sort();
+
+      birds.sort();
+
+      for (let bird in birds) {
+        document.getElementById("bird-list").innerHTML +=
+          `<li>${birds[bird]}</li>`;
+      }
+
+      for (let image in imageURLs) {
+        document.getElementById("images").innerHTML +=
+          `<li><a href="${largeURLs[image]}" target="_blank"><img src="${imageURLs[image]}" alt="Image of a ${birds[image]}"></a></li>`;
+      }
+
+      for (let link in links) {
+        document.getElementById("menu").innerHTML +=
+          `<li><a href="${links[link][1]}" target="_blank">${links[link][0]}</a></li>`;
       }
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
