@@ -1,0 +1,5 @@
+Line 16: "con" instead of "let"
+Line 18: semicolon instead of comma
+Line 20: missing comma
+Line 29: missing brackets
+line 25: missing "+=", so loop doesn't update local variable and stops after one.
