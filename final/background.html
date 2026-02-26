@@ -1,11 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chernobyl Background</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="row r-70">
+      <div class="col c-60">
+        <div id="content" class="col"></div>
+      </div>
+      <div class="col c-33">
+        <div id="text" class="col"></div>
+        <div class="row">
+          <button id="prev">Previous</button>
+          <button id="next" onclick="displayTest">Next</button>
+        </div>
+      </div>
+    </div>
+    <script>
+        let content = document.getElementById('content');
+        let text = document.getElementById('text');
+        let prev = document.getElementById('prev');
+        let next = document.getElementById('next');
+
+        let sections = [
+            {
+                content: `<img src="media/invert.png">`,
+                text: `<h2>First section title</h2><p>First section description</p>`
+            },
+            {
+                content: ``,
+                text: ``
+            }
+        ]
+
+
+    </script>
+  </body>
 </html>
