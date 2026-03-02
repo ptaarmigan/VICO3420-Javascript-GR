@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>s</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="row">
+        <div class="container col w65">
+          <div id="slideshow"></div>
+          <div class="row">
+            <button id="prevBtn" onclick="reverseSlide()">Prev</button>
+            <button id="nextBtn" onclick="advanceSlide()">Next</button>
+          </div>
+        </div>
+        <div class="col w25">
+          <div class="form-container col">
+            <form id="question-form">
+              <label for="name">What is your name?</label>
+              <input
+                type="text"
+                id="name"
+                onblur="updateName(nameInput)"
+              /><br />
+              <label for="animal">What is your favorite animal?</label>
+              <input type="text" id="animal" />
+            </form>
+            <button onclick="enterForm()">Enter</button>
+          </div>
+          <div>
+            <div id="yournameis"></div>
+            <div id="preference"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let slideContent = [
+        ["Dhole", "dhole.jpg", "The dhole is native to central Asia."],
+        ["Manul", "manul.jpg", "The manul is also called the Pallas's Cat."],
+      ];
+
+      let currentSlide = 0;
+      console.log("start: currentSlide = " + currentSlide);
+
+      function updateSlide() {
+        document.getElementById("slideshow").innerHTML = `
+                      <h2>${slideContent[currentSlide][0]}</h2>
+                      <img src="${slideContent[currentSlide][1]}" />
+                      <p>${slideContent[currentSlide][2]}</p>`;
+        console.log("updateSlide = " + currentSlide);
+      }
+
+      function reverseSlide() {
+        if (currentSlide > 0) {
+          currentSlide -= 1;
+          updateSlide();
+        }
+      }
+
+      function advanceSlide() {
+        if (currentSlide < 1) {
+          currentSlide += 1;
+          updateSlide();
+        }
+      }
+
+      window.onload = updateSlide();
+
+      let nameInput = document.forms["question-form"].name.value;
+      console.log("Name Input: " + nameInput);
+      let animalInput = document.forms["question-form"].animal.value;
+
+      function updateName(n) {
+        document.getElementById("yournameis").innerHTML = `<h3>${n}</h3>`;
+      }
+
+      function updateAnimal(n, a) {
+        document.getElementById("preference").innerHTML =
+          `<p>${n}'s favorite animal is ${a}.`;
+      }
+
+      function enterForm() {
+        updateName(nameInput);
+        updateAnimal(nameInput, animalInput);
+      }
+    </script>
+  </body>
+</html>
