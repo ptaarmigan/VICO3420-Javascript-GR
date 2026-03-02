@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>s</title>
+    <title>Week 7</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
@@ -82,12 +83,15 @@
       let animalInput = document.forms["question-form"].animal.value;
 
       function updateName(n) {
+        if (n != "" && n != null){
         document.getElementById("yournameis").innerHTML = `<h3>${n}</h3>`;
+        }
       }
 
       function updateAnimal(n, a) {
+        if (n != "" && n != null && a != "" && a != null) {
         document.getElementById("preference").innerHTML =
-          `<p>${n}'s favorite animal is ${a}.`;
+          `<p>${n}'s favorite animal is ${a}.`;}
       }
 
       function enterForm() {

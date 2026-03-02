@@ -1,0 +1,7 @@
+#goodDay: added "checked" to input element
+Font Type radio:
+    changed "fontStyle" to "fontType"
+    removed "onkeyup" from #serif
+    added "onclick" to #script
+
+#bgcolor: changed input type to "color"
