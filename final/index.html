@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stories of Chernobyl</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Special+Gothic:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,34 +12,95 @@
       crossorigin="anonymous"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Gothic:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <main>
-      <div class="container py-4 vh-75">
-        <div class="p-5 mb-4">
-          <div class="container-fluid py-5 text-end">
-            <h2 class="mb-0">Stories from</h2>
-            <h1 class="mt-0">Chernobyl</h1>
+    <main class="mb-0">
+      <div class="container-fluid" id="main-bkg">
+        <div class="container py-4">
+          <div class="p-5 mb-4">
+            <div id="title" class="container-fluid py-5 text-end text-light">
+              <h2 class="mb-0 main-h2">Stories from</h2>
+              <h1 class="mt-0 main-h1">Chernobyl</h1>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid bg-dark h-100 py-4 p-5">
+      <div class="container-fluid bg-dark h-100 py-4 p-5 mb-0">
         <div class="row">
-          <div class="col-7"></div>
+          <div class="col-7">
+            <a href="background.html"
+              ><div class="container">
+                <h3 class="h3">Start here</h3>
+              </div></a
+            >
+            <a href="liquidators.html"
+              ><div class="container">
+                <h3 class="h3">Then go here.</h3>
+              </div></a
+            >
+            <a href="conclusion.html"
+              ><div class="container">
+                <h3 class="h3">
+                  This last. These will be clickable silhouettes.
+                </h3>
+              </div></a
+            >
+          </div>
           <div class="col-4">
             <p class="text-light">
-              Lorem ipsum dolor sit amet, consecttur adipiscing elit. Praesent
-              at dictum quam, eu congue ante. Sed sit amet malesuada ipsum. In
-              aliquet lorem nunc, eu interdum ante ultricies a. Proin dignissim
-              nunc sed magna tincidunt, elementum semper orci mollis. Aenean
-              sollicitudin, dolor eget tempus aliquam, odio dolor tempus nunc.
+              Chernobyl was the worst nuclear power distaster in history. To the
+              people of Kiev, it was a tragedy. To the USSR, it was a failure
+              and an embarassment. And to the United States, it was a political
+              godsend that allowed them to attack their greatest rivals.<br />Many
+              stories have been told about Chernobyl, and this website takes you
+              through the all the eyes that saw them.
             </p>
           </div>
         </div>
       </div>
     </main>
-    <footer></footer>
+<div class="container-fluid text-light bg-dark mt-0 mb-0 pt-5 pb-1">
+    <div class="container">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <p class="col-md-4 mb-0 text-body-secondary">
+          Made by Graham Richardson <br />
+          For VICO 3420 at Ohio University
+        </p>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item">
+            <a
+              href="index.html"
+              class="nav-link px-2 text-body-secondary disabled"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Part 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Part 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Part 3</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

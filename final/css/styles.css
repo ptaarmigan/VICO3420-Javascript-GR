@@ -9,7 +9,50 @@ h2 {
   font-weight: 426;
   font-variation-settings: "wdth" 109;
 }
-
+.main-h1 {
+  font-size: 48pt;
+}
 body {
   font-family: "Special Gothic", "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #c2463d;
+}
+
+#main-bkg {
+  background-image: url("../media/Wipbkg.webp");
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+}
+
+#title {
+  position: relative;
+  top: 50vh;
+}
+
+#prevBtn {
+  position: absolute;
+  top: 93vh;
+  left: 45vw;
+  z-index: 1;
+}
+
+#nextBtn {
+  position: absolute;
+  top: 93vh;
+  left: 55vw;
+  z-index: 1;
+}
+
+.img {
+  height: 100%;
+}
+
+.height-50 {
+  height: 50vh;
+}
+
+.desc-middle-bottom {
+  position: absolute;
+  top: 80vh;
+  left: 5vw;
 }
