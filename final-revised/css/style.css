@@ -1,0 +1,11 @@
+body {
+  font-family: "Special Gothic", Arial, Helvetica, sans-serif;
+}
+
+h1.special-gothic-title {
+  font-family: "Special Gothic", Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 90;
+}
