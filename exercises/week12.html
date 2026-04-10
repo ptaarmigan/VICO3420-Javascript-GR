@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 12 Exercise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Gothic:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Special Gothic", sans-serif;
+      }
+
+      div {
+        max-width: 90vw;
+        margin: auto;
+      }
+    </style>
+
+    <div id="map"></div>
+    <script>
+      let latitude;
+      let longitude;
+
+      function createMap() {
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiZ3JpY2hhcmRzb241NTEiLCJhIjoiY21ucXJ1NDhyMGFtNjJvcHB0am51bGQ0ZyJ9.aIdvwhOggJB010iauLWOCw";
+        const map = new mapboxgl.Map({
+          container: "map",
+          // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+          style: "mapbox://styles/mapbox/standard",
+          center: [latitude, longitude],
+          zoom: 8,
+        });
+
+        // Create a default Marker and add it to the map.
+        const marker1 = new mapboxgl.Marker()
+          .setLngLat([latitude, longitude])
+          .addTo(map);
+      }
+
+      let endpoint = "https://api.wheretheiss.at/v1/satellites/25544";
+
+      let request = new XMLHttpRequest();
+
+      request.open("GET", endpoint);
+
+      request.onload = function () {
+        let response = request.response;
+
+        let parsedData = JSON.parse(response);
+
+        // View in Console (optional)
+        console.log(parsedData);
+
+        // Add code below this line to work with the parsedData object
+        latitude = parsedData.latitude;
+        longitude = parsedData.longitude;
+
+        createMap();
+      };
+
+      try {
+        request.send();
+      } catch (err) {
+        console.log("Error: " + err.message);
+      }
+    </script>
+  </body>
+</html>
