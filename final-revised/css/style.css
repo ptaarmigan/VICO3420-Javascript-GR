@@ -5,10 +5,12 @@ body {
 h1.special-gothic-title {
   font-family: "Special Gothic", Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 440  ;
+  font-weight: 440;
   font-style: normal;
   font-variation-settings: "wdth" 105;
 }
+
+
 
 /* Color Changes, using CDN instead of compiled so it need to be like this */
 
@@ -29,4 +31,17 @@ h1.special-gothic-title {
   -o-border-radius: 0;
 }
 
+#webbed-bg {
+  background-image: url("../media/webbed-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: black;
+}
 
+.bodoni-moda-title {
+  font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 105;
+}

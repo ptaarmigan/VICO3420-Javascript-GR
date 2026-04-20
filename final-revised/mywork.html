@@ -19,26 +19,22 @@
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="">
-    <nav class="py-3 bg-body">
+  <body class="bg-black text-light">
+    <nav class="py-3 bg-black">
       <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
           <li class="nav-item">
-            <a href="index.html" class="nav-link link-body-emphasis px-2"
-              >Home</a
-            >
+            <a href="index.html" class="nav-link px-2">Home</a>
           </li>
         </ul>
         <ul class="nav">
           <li class="nav-item">
-            <a href="about.html" class="nav-link link-body-emphasis px-3"
-              >About Me</a
-            >
+            <a href="about.html" class="nav-link px-3">About Me</a>
           </li>
           <li class="nav-item">
             <a
               href="mywork.html"
-              class="nav-link link-body-emphasis px-3 active disabled"
+              class="nav-link px-3 active disabled"
               aria-current="page"
               >My Work</a
             >
@@ -46,49 +42,115 @@
         </ul>
       </div>
     </nav>
-    <h1 class="display-1">My Work</h1>
-    <div class="container-fluid">
+    <div class="container"><h1 class="display-1">My Work</h1></div>
+    <div class="container primary-bg px-4">
       <div class="container">
         <h3 class="display-5">Design</h3>
-
-        <div class="container row row-cols-auto">
-          <div>
-            <p class="d-inline-flex gap-1">
-              <a
-                class="btn btn-primary"
-                data-bs-toggle="collapse"
-                href="#collapseInfoG"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseInfoG"
-              >
-                Link with href
-              </a>
-            </p>
-            <div class="collapse" id="collapseInfoG">
-              <div class="container-fluid primary-bg card card-body">
+        <div class="container d-flex px-4 mb-4 flex-wrap g-">
+          <div class="m-1 d-flex">
+            <a
+              data-bs-toggle="collapse"
+              href="#dCollapse1"
+              role="button"
+              aria-expanded="false"
+              aria-controls="dCollapse1"
+              ><img src="media/clickme.png" class="img-fluid"
+            /></a>
+            <div
+              id="dCollapse1"
+              class="collapse collapse-horizontal bg-light p-3 text-dark"
+            >
+              <div>
                 <button
                   type="button"
-                  class="btn-close me-auto"
+                  class="btn-close float-end"
                   aria-label="Close"
                   data-bs-toggle="collapse"
-                  data-bs-target="collapseInfoG"
+                  aria-expanded="false"
+                  aria-controls="dCollapse1"
+                  data-bs-target="#dCollapse1"
                 ></button>
-                <div class="container d-flex px-4">  
-                  <div class="col-md-auto"></div>
-                  <div class="col-md-4 text-light">
-                    <h4>Title</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam quis purus orci. Aenean et rhoncus ante. Proin
-                      lobortis finibus tristique. Donec varius libero justo, id
-                      luctus est fringilla sit amet. Nam pellentesque tincidunt
-                      rhoncus. Nulla consectetur leo vel erat dictum pretium.
-                      Morbi id dignissim purus.
-                    </p>
-                  </div>
-                </div>
               </div>
+              <p>
+                <a class="btn btn-primary" href="showcase.html">Click me!!</a>
+              </p>
+            </div>
+          </div>
+          <div class="m-1 d-flex">
+            <a
+              data-bs-toggle="collapse"
+              href="#dCollapse2"
+              role="button"
+              aria-expanded="false"
+              aria-controls="dCollapse2"
+              ><img src="media/phrh.png" class="img-fluid"
+            /></a>
+            <div
+              id="dCollapse2"
+              class="collapse collapse-horizontal bg-light p-3"
+            >
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="dCollapse2"
+                data-bs-target="#dCollapse2"
+              ></button>
+              <p>placeholdertext</p>
+            </div>
+          </div>
+          <div class="m-1 d-flex">
+            <a
+              data-bs-toggle="collapse"
+              href="#dCollapse3"
+              role="button"
+              aria-expanded="false"
+              aria-controls="dCollapse3"
+              ><img src="media/phs.png" class="img-fluid"
+            /></a>
+            <div
+              id="dCollapse3"
+              class="collapse collapse-horizontal bg-light p-3 text-dark"
+            >
+              <div>
+                <button
+                  type="button"
+                  class="btn-close float-end"
+                  aria-label="Close"
+                  data-bs-toggle="collapse"
+                  aria-expanded="false"
+                  aria-controls="dCollapse3"
+                  data-bs-target="#dCollapse3"
+                ></button>
+              </div>
+              <p>placeholdertext</p>
+            </div>
+          </div>
+          <div class="m-1 d-flex">
+            <a
+              data-bs-toggle="collapse"
+              href="#dCollapse4"
+              role="button"
+              aria-expanded="false"
+              aria-controls="dCollapse4"
+              ><img src="media/phrh.png" class="img-fluid"
+            /></a>
+            <div
+              id="dCollapse4"
+              class="collapse collapse-horizontal bg-light p-3"
+            >
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="dCollapse4"
+                data-bs-target="#dCollapse4"
+              ></button>
+              <p>placeholdertext</p>
             </div>
           </div>
         </div>
@@ -96,20 +158,221 @@
       <div class="container">
         <h3 class="display-5">Illustration</h3>
       </div>
-      <div class="container d-flex">
-        <div class="col-md-auto">
-          <a href="#"><img src="" /></a>
+      <div class="container d-flex px-4 mb-4 overflow-x-scroll flex-wrap">
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#iCollapse1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="iCollapse1"
+            ><img src="media/phs.png" class="img-fluid"
+          /></a>
+          <div
+            id="iCollapse1"
+            class="collapse collapse-horizontal bg-light p-3 text-dark"
+          >
+            <div>
+              <button
+                type="button"
+                class="btn-close float-end"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="iCollapse1"
+                data-bs-target="#iCollapse1"
+              ></button>
+            </div>
+            <p>placeholdertext</p>
+          </div>
         </div>
-        <div class="col-md-4"><img src="" /> <img src="" /></div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#iCollapse2"
+            role="button"
+            aria-expanded="false"
+            aria-controls="iCollapse2"
+            ><img src="media/phrh.png" class="img-fluid"
+          /></a>
+          <div
+            id="iCollapse2"
+            class="collapse collapse-horizontal bg-light p-3"
+          >
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="iCollapse2"
+              data-bs-target="#iCollapse2"
+            ></button>
+            <p>placeholdertext</p>
+          </div>
+        </div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#iCollapse3"
+            role="button"
+            aria-expanded="false"
+            aria-controls="iCollapse3"
+            ><img src="media/phs.png" class="img-fluid"
+          /></a>
+          <div
+            id="iCollapse3"
+            class="collapse collapse-horizontal bg-light p-3 text-dark"
+          >
+            <div>
+              <button
+                type="button"
+                class="btn-close float-end"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="iCollapse3"
+                data-bs-target="#iCollapse3"
+              ></button>
+            </div>
+            <p>placeholdertext</p>
+          </div>
+        </div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#iCollapse4"
+            role="button"
+            aria-expanded="false"
+            aria-controls="iCollapse4"
+            ><img src="media/phrh.png" class="img-fluid"
+          /></a>
+          <div
+            id="iCollapse4"
+            class="collapse collapse-horizontal bg-light p-3"
+          >
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="iCollapse4"
+              data-bs-target="#iCollapse4"
+            ></button>
+            <p>placeholdertext</p>
+          </div>
+        </div>
       </div>
+
       <div class="container">
         <h3 class="display-5">Audio-Visual</h3>
       </div>
-      <div class="container d-flex">
-        <div class="col-md-auto">
-          <a href="#"><img src="" /></a>
+      <div class="container d-flex px-4 mb-4 overflow-x-scroll flex-wrap">
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#avCollapse1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="avCollapse1"
+            ><img src="media/phs.png" class="img-fluid"
+          /></a>
+          <div
+            id="avCollapse1"
+            class="collapse collapse-horizontal bg-light p-3 text-dark"
+          >
+            <div>
+              <button
+                type="button"
+                class="btn-close float-end"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="avCollapse1"
+                data-bs-target="#avCollapse1"
+              ></button>
+            </div>
+            <p>placeholdertext</p>
+          </div>
         </div>
-        <div class="col-md-4"><img src="" /> <img src="" /></div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#avCollapse2"
+            role="button"
+            aria-expanded="false"
+            aria-controls="avCollapse2"
+            ><img src="media/phrh.png" class="img-fluid"
+          /></a>
+          <div
+            id="avCollapse2"
+            class="collapse collapse-horizontal bg-light p-3"
+          >
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="avCollapse2"
+              data-bs-target="#avCollapse2"
+            ></button>
+            <p>placeholdertext</p>
+          </div>
+        </div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#avCollapse3"
+            role="button"
+            aria-expanded="false"
+            aria-controls="avCollapse3"
+            ><img src="media/phs.png" class="img-fluid"
+          /></a>
+          <div
+            id="avCollapse3"
+            class="collapse collapse-horizontal bg-light p-3 text-dark"
+          >
+            <div>
+              <button
+                type="button"
+                class="btn-close float-end"
+                aria-label="Close"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="avCollapse3"
+                data-bs-target="#avCollapse3"
+              ></button>
+            </div>
+            <p>placeholdertext</p>
+          </div>
+        </div>
+        <div class="m-1 d-flex">
+          <a
+            data-bs-toggle="collapse"
+            href="#avCollapse4"
+            role="button"
+            aria-expanded="false"
+            aria-controls="avCollapse4"
+            ><img src="media/phrh.png" class="img-fluid"
+          /></a>
+          <div
+            id="avCollapse4"
+            class="collapse collapse-horizontal bg-light p-3"
+          >
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="avCollapse4"
+              data-bs-target="#avCollapse4"
+            ></button>
+            <p>placeholdertext</p>
+          </div>
+        </div>
       </div>
     </div>
     <script

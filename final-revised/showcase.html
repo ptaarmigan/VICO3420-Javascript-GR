@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VICO 3420JS Final</title>
+
+    <!-- ====== Google Fonts links ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Special+Gothic:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ====== Bootstrap CDN ====== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- ====== Custom Styles ====== -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-black">
+    <nav class="py-3 bg-black">
+      <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto text-light">
+          <li class="nav-item">
+            <a
+              href="index.html"
+              class="nav-link px-2 active"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="about.html" class="nav-link px-3">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a href="mywork.html" class="nav-link px-3">My Work</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container text-light p-4 d-flex g-4">
+      <div class="flex-fill mx-2">
+        <div id="slideshow"></div>
+      </div>
+      <div class="col-lg-5 mx-2">
+        <h1>Title</h1>
+        <p class="h2">Subheading</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div class="container d-flex flex-wrap">
+          <button
+            type="button"
+            class="btn btn-primary me-auto"
+            id="prevBtn"
+            onclick="reverseSlide()"
+          >
+            Prev
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="nextBtn"
+            onclick="advanceSlide()"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Bootstrap JS ====== -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ====== JQuery CDN ====== -->
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let slideContent = [
+        ["1", "media/slide1.png", "description text in this description."],
+        ["2", "media/slide2.png", ""],
+      ];
+
+      let currentSlide = 0;
+      console.log("start: currentSlide = " + currentSlide);
+
+      let layoutNumber = 1;
+
+      function updateLayout() {
+        layoutNumber = Number(slideContent[currentSlide][0]);
+      }
+
+      console.log("layoutNumber = " + layoutNumber);
+
+      function updateSlide() {
+        updateLayout();
+        switch (layoutNumber) {
+          case 1:
+            document.getElementById("slideshow").innerHTML =
+              `<div class="container">
+            <img class="container-fluid" src="${slideContent[currentSlide][1]}" />
+            <div class="container">
+              <p>${slideContent[currentSlide][2]}</p>
+            </div>
+          </div>`;
+            break;
+
+          case 2:
+            document.getElementById("slideshow").innerHTML =
+              `<div class="container">
+            <img class="container-fluid" src="${slideContent[currentSlide][1]}" />
+          </div>`;
+            break;
+        }
+        console.log("slide layout = " + layoutNumber);
+      }
+
+      function reverseSlide() {
+        if (currentSlide > 0) {
+          currentSlide -= 1;
+          document.getElementById("slideshow").innerHTML = ``;
+          updateSlide();
+        }
+      }
+
+      function advanceSlide() {
+        if (currentSlide < 1) {
+          currentSlide += 1;
+          document.getElementById("slideshow").innerHTML = ``
+          updateSlide();
+        }
+      }
+
+      window.onload = updateSlide();
+    </script>
+  </body>
+</html>
